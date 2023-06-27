@@ -1,0 +1,3 @@
+#!/bin/bash
+md2pdf ~/wiki/cs-nvim.md -o ~/Cloud/Cheatsheets/cs-nvim.pdf
+md2pdf ~/wiki/cs-i3.md -o ~/Cloud/Cheatsheets/cs-i3.pdf
