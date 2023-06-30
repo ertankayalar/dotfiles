@@ -3,10 +3,10 @@
 #####################
 
 super + b
-    firefox-esr
+    flatpak run org.mozilla.firefox 
 
 super + Return
-	tilix
+	alacritty
 
 # rofi launchers
 super + space

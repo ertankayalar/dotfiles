@@ -2,7 +2,7 @@ super + b
     firefox-esr
 
 super + Return
-	tilix
+	alacritty
 
 # rofi launchers
 super + space

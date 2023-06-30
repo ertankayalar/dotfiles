@@ -9,7 +9,8 @@ logfile="$HOME/.dkrc.log"
 # autostart
 dunst &
 picom --config ~/.config/picom/picom.conf &
-feh --bg-fill ~/.config/backgrounds/wallhaven-85erok_3440x1440.png &
+feh --bg-fill ~/Wallpapers/orange-heaven-a2ntpw5HJgg-unsplash.jpg &
+# feh --bg-fill ~/.config/backgrounds/wallhaven-85erok_3440x1440.png &
 ~/bin/polybar-dk &
 
 # (re)load sxhkd for keybinds
@@ -174,5 +175,7 @@ if grep -q 'error:' "$logfile"; then
 		"$(awk '/error:/ {sub(/^error: /, ""); gsub(/</, "\<"); print}' "$logfile")"
 	exit 1
 fi
+
+telegram-desktop &
 
 exit 0

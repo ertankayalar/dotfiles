@@ -11,7 +11,7 @@ super + space
    	rofi -modi drun -show drun -line padding 4 -hide-scrollbar -show-icons
 	
 super + b
-	firefox-esr
+    flatpak run org.mozilla.firefox
 
 super + e
 	geany
@@ -21,7 +21,7 @@ super + f
 
 # terminal
 super + Return
-	tilix
+	alacritty
 	
 super + l
 	~/Applications/LiteXL-v2.1.1-addons-x86_64.AppImage 

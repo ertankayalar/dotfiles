@@ -190,7 +190,7 @@ keys = [
     ]
 # end of keys
 
-#groups = [Group(i) for i in ["", "", "", "", "阮", "", "", "", ""]]
+# groups = [Group(i) for i in ["", "", "", "", "阮", "", "", "", ""]]
 groups = [Group(i) for i in ["1", "2", "3", "4", "5", "6", "7", "8", "9"]]
 group_hotkeys = "123456789"
 

@@ -4,7 +4,8 @@
 /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 # nitrogen --restore; sleep 1; 
 ~/bin/polybar-i3 &
-feh --bg-fill ~/.config/backgrounds/bluemountain.jpg &
+feh --bg-fill ~/Wallpapers/mark-stoop-As_WAg_6BPg-unsplash.jpg  &
+# feh --bg-fill ~/.config/backgrounds/bluemountain.jpg &
 picom -b &
 numlockx on &
 # nm-applet &
@@ -14,3 +15,6 @@ dunst &
 
 # sxhkd
 sxhkd -c ~/.config/i3/sxhkd/sxhkdrc &
+
+telegram-desktop &
+
