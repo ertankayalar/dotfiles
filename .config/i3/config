@@ -12,3 +12,11 @@ new_window 1pixel
 gaps inner 6
 gaps outer 3
 
+# Open applications on specific workspaces
+assign [class="Alacritty"] $ws1
+assign [class="Firefox"] $ws2
+assign [class="Thunar"] $ws3
+assign [class="DesktopEditors"] $ws4
+assign [class="obsidian"] $ws4
+assign [class="TelegramDesktop"] $ws5
+assign [class="Spotify"] $ws7
