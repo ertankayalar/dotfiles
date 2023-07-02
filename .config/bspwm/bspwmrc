@@ -20,9 +20,11 @@ bspc rule -a "*" split_dir=east
 bspc rule -a Firefox desktop='^1' focus=on follow=on
 bspc rule -a Firefox-esr desktop='^1' focus=on follow=on
 bspc rule -a Alacritty desktop='^2' focus=on follow=on
-bspc rule -a Telegram-desktop desktop='^5' 
+bspc rule -a TelegramDesktop desktop='^5' 
 bspc rule -a Spotify desktop='^7' 
 bspc rule -a vlc desktop='^8' focus=on follow=on 
+bspc rule -a DesktopEditors desktop='^4' focus=on follow=on 
+bspc rule -a obsidian desktop='^4' focus=on follow=on 
 bspc rule -a Virt-manager desktop='^6' focus=on follow=on 
 bspc rule -a qimgv state=floating center=true
 bspc rule -a Xarchiver state=floating layer=normal center=true
@@ -41,7 +43,8 @@ bspc rule -a Thunar desktop='^3' follow=on
 
 dunst &
 picom --config ~/.config/picom/picom.conf &
-feh --bg-fill ~/Wallpapers/wp2437910-ultrawide-wallpapers.jpg &
+# feh --bg-fill ~/Wallpapers/wp2437910-ultrawide-wallpapers.jpg &
+feh --bg-fill ~/Wallpapers/desktop-20.12.15090704-by-@WALLSBYJFL.jpg &
 # feh --bg-fill ~/.config/backgrounds/wallhaven-y8o51x_3440x1440.png 
 #
 ## Polybar or tint
