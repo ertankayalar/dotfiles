@@ -1,5 +1,6 @@
 super + b
-    firefox-esr
+    flatpak run org.mozilla.firefox
+#    firefox-esr
 
 super + Return
 	alacritty
@@ -27,6 +28,9 @@ super + h
 
 super + f
 	thunar
+
+super + v
+    vivaldi
 
 super + e 	
 	geany

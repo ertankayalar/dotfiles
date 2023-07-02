@@ -44,7 +44,8 @@ bspc rule -a Thunar desktop='^3' follow=on
 dunst &
 picom --config ~/.config/picom/picom.conf &
 # feh --bg-fill ~/Wallpapers/wp2437910-ultrawide-wallpapers.jpg &
-feh --bg-fill ~/Wallpapers/desktop-20.12.15090704-by-@WALLSBYJFL.jpg &
+feh --randomize --bg-fill ~/Wallpapers/* &
+# feh --bg-fill ~/Wallpapers/desktop-20.12.15090704-by-@WALLSBYJFL.jpg &
 # feh --bg-fill ~/.config/backgrounds/wallhaven-y8o51x_3440x1440.png 
 #
 ## Polybar or tint
@@ -58,6 +59,9 @@ clipmenud &
  # volumeicon &
  # nm-applet &
 sxhkd &
+
+# Set wallpaper
+nitrogen --restore &
 
 telegram-desktop &
 
