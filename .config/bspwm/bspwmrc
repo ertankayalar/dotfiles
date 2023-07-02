@@ -1,6 +1,6 @@
 #! /bin/sh
 
-bspc monitor -d I II III IV V VI VII VIII IX X
+bspc monitor -d "www" "code" "dir" "txt" "chat" "vir" "msc" "vid" "gfx" "rec"
 
 bspc config border_width			4
 bspc config window_gap				10
@@ -17,6 +17,13 @@ bspc config active_border_color		"#8BE9FD"
 bspc config presel_feedback_color	"#50FA7B"
 
 bspc rule -a "*" split_dir=east
+bspc rule -a Firefox desktop='^1' focus=on follow=on
+bspc rule -a Firefox-esr desktop='^1' focus=on follow=on
+bspc rule -a Alacritty desktop='^2' focus=on follow=on
+bspc rule -a Telegram-desktop desktop='^5' 
+bspc rule -a Spotify desktop='^7' 
+bspc rule -a vlc desktop='^8' focus=on follow=on 
+bspc rule -a Virt-manager desktop='^6' focus=on follow=on 
 bspc rule -a qimgv state=floating center=true
 bspc rule -a Xarchiver state=floating layer=normal center=true
 bspc rule -a mpv state=floating layer=normal center=true
@@ -26,15 +33,17 @@ bspc rule -a Galculator state=floating layer=normal center=true
 bspc rule -a Xfce4-terminal state=floating layer=normal center=true
 bspc rule -a Google-chrome desktop='^2' follow=on
 bspc rule -a Gimp desktop='^8' follow=on
+bspc rule -a Inkscape desktop='^8' follow=on
 bspc rule -a obs desktop='^9' follow=on
-bspc rule -a discord desktop='^10' follow=on
+bspc rule -a discord desktop='^5' follow=on
 bspc rule -a Thunar desktop='^3' follow=on
 # bspc rule -a Geany desktop='^4' follow=on
 
 dunst &
 picom --config ~/.config/picom/picom.conf &
 feh --bg-fill ~/Wallpapers/wp2437910-ultrawide-wallpapers.jpg &
-# feh --bg-fill ~/.config/backgrounds/wallhaven-y8o51x_3440x1440.png &
+# feh --bg-fill ~/.config/backgrounds/wallhaven-y8o51x_3440x1440.png 
+#
 ## Polybar or tint
 ~/bin/polybar-launch &
 # tint2 &
@@ -43,8 +52,8 @@ feh --bg-fill ~/Wallpapers/wp2437910-ultrawide-wallpapers.jpg &
 clipmenud &
 
 ## apps for systray if enabled
-# volumeicon &
-# nm-applet &
+ # volumeicon &
+ # nm-applet &
 sxhkd &
 
 telegram-desktop &
