@@ -1,4 +1,7 @@
 include $HOME/.config/i3/workspaces.conf
+
+
+
 # include $HOME/.config/i3/bar.conf
 set $mod Mod4
 font pango:monospace 8
