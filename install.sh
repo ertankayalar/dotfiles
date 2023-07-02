@@ -13,3 +13,6 @@ cp -rf ~/.config ~/.config.bak
 cp -rf .config/*  ~/.config
 
 
+# Tmux Plugins
+git clone https://github.com/tmux-plugins/tpm "$CONFIG_HOME/tmux/plugins/tpm"
+"$CONFIG_HOME/tmux/plugins/tpm/bin/install_plugins"
