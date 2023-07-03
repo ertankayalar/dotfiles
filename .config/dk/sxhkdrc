@@ -13,6 +13,10 @@ super + space
 super + b
     flatpak run org.mozilla.firefox
 
+super + b
+    flatpak run org.mozilla.firefox
+super + v
+    vivaldi-stable
 super + e
 	geany
 

@@ -5,6 +5,9 @@ super + b
 super + Return
 	alacritty
 
+super + shift + Return
+    kitty
+
 # rofi launchers
 super + space
    	rofi -modi drun -show drun -line padding 4 -hide-scrollbar -show-icons
@@ -30,7 +33,7 @@ super + f
 	thunar
 
 super + v
-    vivaldi
+    vivaldi-stable
 
 super + e 	
 	geany
@@ -138,4 +141,6 @@ super+ alt + v
     
 super + @equal
 	bspc query -N -d | xargs -I % bspc node % -B
- 
+
+super + alt + w 
+    feh --randomize --bg-fill ~/Wallpapers/*

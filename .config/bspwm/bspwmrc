@@ -19,7 +19,9 @@ bspc config presel_feedback_color	"#50FA7B"
 bspc rule -a "*" split_dir=east
 bspc rule -a Firefox desktop='^1' focus=on follow=on
 bspc rule -a Firefox-esr desktop='^1' focus=on follow=on
+bspc rule -a Vivaldi-stable desktop='^1' focus=on follow=on
 bspc rule -a Alacritty desktop='^2' focus=on follow=on
+bspc rule -a kitty desktop='^2' focus=on follow=on
 bspc rule -a TelegramDesktop desktop='^5' 
 bspc rule -a Spotify desktop='^7' 
 bspc rule -a vlc desktop='^8' focus=on follow=on 
@@ -61,7 +63,7 @@ clipmenud &
 sxhkd &
 
 # Set wallpaper
-nitrogen --restore &
+# nitrogen --restore &
 
 telegram-desktop &
 
