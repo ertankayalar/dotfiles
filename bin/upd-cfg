@@ -5,7 +5,7 @@ cp ~/OS/dotfiles/.config/bspwm/bspwmrc ~/.config/bspwm/
 cp -rf ~/OS/dotfiles/.config/lvim ~/.config/
 cp -rf ~/OS/dotfiles/.config/nvim ~/.config/
 cp -rf ~/OS/dotfiles/.config/tmux ~/.config/
-
+cp -rf ~/OS/dotfiles/.config/alacritty ~/.config/
 
 # scripts
 \cp -rf ~/OS/dotfiles/bin/ ~
