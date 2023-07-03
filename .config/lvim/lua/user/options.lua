@@ -86,4 +86,4 @@ lvim.builtin.telescope.defaults.path_display = {
 
 -- colorscheme
 lvim.transparent_window = false
-lvim.colorscheme = 'tokyonight-moon'
+lvim.colorscheme = 'kanagawa-dragon'
