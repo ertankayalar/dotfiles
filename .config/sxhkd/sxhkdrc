@@ -1,6 +1,7 @@
 super + b
-    flatpak run org.mozilla.firefox
+    flatpak run com.brave.Browser
 #    firefox-esr
+# flatpak run org.mozilla.firefox
 
 super + Return
 	alacritty

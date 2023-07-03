@@ -19,6 +19,7 @@ bspc config presel_feedback_color	"#50FA7B"
 bspc rule -a "*" split_dir=east
 bspc rule -a Firefox desktop='^1' focus=on follow=on
 bspc rule -a Firefox-esr desktop='^1' focus=on follow=on
+bspc rule -a brave-browser desktop='^1' focus=on follow=on
 bspc rule -a Vivaldi-stable desktop='^1' focus=on follow=on
 bspc rule -a Alacritty desktop='^2' focus=on follow=on
 bspc rule -a kitty desktop='^2' focus=on follow=on

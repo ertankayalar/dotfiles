@@ -2,5 +2,7 @@
 
 cp ~/Code/os/dotfiles/.config/sxhkd/sxhkdrc ~/.config/sxhkd/
 cp ~/Code/os/dotfiles/.config/bspwm/bspwmrc ~/.config/bspwm/
+cp -rf ~/Code/os/dotfiles/.config/lvim ~/.config/
 
-
+# scripts
+\cp -rf ~/Code/os/dotfiles/bin/ ~
