@@ -1,8 +1,11 @@
 #!/bin/bash
 
-cp ~/Code/os/dotfiles/.config/sxhkd/sxhkdrc ~/.config/sxhkd/
-cp ~/Code/os/dotfiles/.config/bspwm/bspwmrc ~/.config/bspwm/
-cp -rf ~/Code/os/dotfiles/.config/lvim ~/.config/
+cp ~/OS/dotfiles/.config/sxhkd/sxhkdrc ~/.config/sxhkd/
+cp ~/OS/dotfiles/.config/bspwm/bspwmrc ~/.config/bspwm/
+cp -rf ~/OS/dotfiles/.config/lvim ~/.config/
+cp -rf ~/OS/dotfiles/.config/nvim ~/.config/
+cp -rf ~/OS/dotfiles/.config/tmux ~/.config/
+
 
 # scripts
-\cp -rf ~/Code/os/dotfiles/bin/ ~
+\cp -rf ~/OS/dotfiles/bin/ ~

@@ -51,10 +51,8 @@ unset color_prompt force_color_prompt
 
 #paths 
 alias cdm="cd /run/media/ertan/"
-alias co='cd $HOME/Code'
+alias pr='cd $HOME/Projects/'
 alias wi="cd $HOME/Wiki"
-alias dot="cd $HOME/.dotfiles"
-alias cod="cd $HOME/Code"
 alias wik="cd $HOME/Wiki"
 
 alias gcf='cd $HOME/.config'
