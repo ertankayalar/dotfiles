@@ -11,12 +11,12 @@ super + space
    	rofi -modi drun -show drun -line padding 4 -hide-scrollbar -show-icons
 	
 super + b
-    flatpak run org.mozilla.firefox
+    firefox
+    # flatpak run org.mozilla.firefox
 
-super + b
-    flatpak run org.mozilla.firefox
 super + v
     vivaldi-stable
+
 super + e
 	geany
 

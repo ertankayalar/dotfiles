@@ -1,7 +1,13 @@
+# browser
 super + b
+    firefox
+
+# second browser
+super + shift + b
     flatpak run com.brave.Browser
-#    firefox-esr
-# flatpak run org.mozilla.firefox
+
+super + v
+    vivaldi-stable
 
 super + Return
 	alacritty
@@ -32,9 +38,6 @@ super + h
 
 super + f
 	thunar
-
-super + v
-    vivaldi-stable
 
 super + e 	
 	geany
