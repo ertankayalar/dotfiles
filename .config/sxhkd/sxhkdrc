@@ -1,8 +1,12 @@
 # browser
 super + b
-    firefox
+    librewolf
 
 # second browser
+# super + shift + b 
+    # firefox
+
+# third browser
 super + shift + b
     flatpak run com.brave.Browser
 

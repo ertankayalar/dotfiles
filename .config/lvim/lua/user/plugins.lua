@@ -123,7 +123,7 @@ lvim.plugins = {
     -- Snippets
     "L3MON4D3/LuaSnip",
     "rafamadriz/friendly-snippets",
-
+    "vimwiki/vimwiki",
     -- themes
     {
         'olivercederborg/poimandres.nvim',
