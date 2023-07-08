@@ -217,6 +217,10 @@ eval "$(zoxide init bash)"
 export PATH="$HOME/bin:$HOME/.local/bin::$PATH"
 export PATH="/usr/local/go/bin:$PATH"
 
+#PNPM
+export PNPM_HOME="$HOME/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
