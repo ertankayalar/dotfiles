@@ -1,4 +1,6 @@
 #!/bin/sh
+
+# volumeicon &
 nm-applet &
 
 # background

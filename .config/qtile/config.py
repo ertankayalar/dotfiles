@@ -1,28 +1,4 @@
-# Copyright (c) 2010 Aldo Cortesi
-# Copyright (c) 2010, 2014 dequis
-# Copyright (c) 2012 Randall Ma
-# Copyright (c) 2012-2014 Tycho Andersen
-# Copyright (c) 2012 Craig Barnes
-# Copyright (c) 2013 horsik
-# Copyright (c) 2013 Tao Sauvage
-#
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included in
-# all copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-# SOFTWARE.
+# QtileOS for Debian 12 
 
 from libqtile import bar, layout, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
@@ -40,6 +16,8 @@ def autostart():
 
 mod = "mod4"
 #terminal = guess_terminal()
+myTerm = "alacritty" 
+myBrowser = "librewolf"
 """
 Color schemes live here
 """
@@ -96,20 +74,70 @@ _gruvbox = {
     'fg0':          '#1d2021',
     'fg9':          '#ebdbb2'
 }
+_green = {
 
-color_schema = _gruvbox
+    'bg':           '#1f2428',
+    'fg':           '#dfdfdf',
+    'dark-red':     '#d84949',
+    'red':          '#ff6c6b',
+    'dark-green':   '#5f875f',
+    'green':        '#a9b665',
+    'dark-yellow':  '#e78a4e',
+    'yellow':       '#d8a657',
+    'dark-blue':    '#51afef',
+    'blue':         '#46d9ff',
+    'dark-magenta': '#d3869b',
+    'magenta':      '#d3869b',
+    'dark-cyan':    '#89b482',
+    'cyan':         '#89b482',
+    'dark-gray':    '#1c1f24',
+    'gray':         '#32302f',
+
+    'fg4':          '#766f64',
+    'fg3':          '#665c54',
+    'fg2':          '#FFFFFF',
+    'fg1':          '#3c3836',
+    'bg0':          '#32302f',
+    'fg0':          '#1d2021',
+    'fg9':          '#ebdbb2',
+    'bgt':          '#000000'
+
+        }
+color_schema = _green
 
 
 keys = [
 
 # Add dedicated sxhkdrc to autostart.sh script
 
-# CLOSE WINDOW, RELOAD AND QUIT QTILE
-    Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
-    Key([mod, "shift"], "r", lazy.reload_config(), desc="Reload the config"),
-    Key([mod, "shift"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    #Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+         #=-/ Main sys control /-=#
+         Key([mod], "Tab", lazy.next_layout(), desc='Toggle through layouts'),
+         Key([mod], "q", lazy.window.kill(), desc="kill focused window"),
+         Key([mod, "shift"], "q", lazy.shutdown(), desc="shutdown qtile"),
+         Key([mod, "control"], "r", lazy.restart(), desc='Restart Qtile'),
+         Key([mod, "shift"], "r", lazy.reload_config(), desc="reload the config"),
 
+         #=-/ Terminals /-=#
+         Key([mod, "shift"], "Return", lazy.spawn(myTerm), desc='Run Launcher'),
+         Key([mod, "shift"], "a", lazy.spawn("alacritty")),
+         Key([mod, "shift"], "s", lazy.spawn("kitty -e bettercd.sh"), desc='my file manager'),
+
+         #=-/ Browsers /-=#
+         Key([mod, "shift"], "b", lazy.spawn(myBrowser), desc='librewolf'),
+         Key([mod, "shift"], "f", lazy.spawn("firefox"), desc='another browser'),
+
+         
+         #=-/ Multimedia keys /-=#
+         Key([], "XF86AudioLowerVolume", lazy.spawn("pactl set-sink-volume 0 -10%")),
+         Key([], "XF86AudioRaiseVolume", lazy.spawn("pactl set-sink-volume 0 +10%")),
+         Key([], "XF86AudioMute", lazy.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle")),
+
+# # CLOSE WINDOW, RELOAD AND QUIT QTILE
+#     Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
+#     Key([mod, "shift"], "r", lazy.reload_config(), desc="Reload the config"),
+#     Key([mod, "shift"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
+#     #Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+#
 # CHANGE FOCUS USING VIM OR DIRECTIONAL KEYS
     Key([mod], "Up", lazy.layout.up()),
     Key([mod], "Down", lazy.layout.down()),
@@ -181,7 +209,7 @@ keys = [
         ),
 
 # QTILE LAYOUT KEYS
-    Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
+    # Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
 
 # TOGGLE FLOATING LAYOUT
     Key([mod, "shift"], "space", lazy.window.toggle_floating()),
@@ -219,98 +247,178 @@ for i in groups:
     )
 
 layouts = [
-    layout.Columns(margin=3, num_columns=4, insert_position=1, border_focus="#bd93f9", border_normal="#282836", border_width=4),
+    layout.Columns(margin=3, num_columns=3, insert_position=1, border_focus=color_schema['cyan'], border_normal=color_schema['dark-blue'], border_width=4),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
-    # layout.Matrix(),
-    # layout.MonadTall(),
-    # layout.MonadWide(),
-    # layout.RatioTile(),
+    layout.Matrix(),
+    layout.MonadTall(),
+    layout.MonadWide(),
+    layout.RatioTile(),
     # layout.Tile(),
     # layout.TreeTab(),
     # layout.VerticalTile(),
-    # layout.Zoomy(),
+    layout.Zoomy(),
 ]
 
+#=-/ Default settings for widgets /-=#
 widget_defaults = dict(
-	font='Hack Nerd Font Regular',
+	font='JetBrainsMono Nerd Font',
     background=color_schema['bg'],
     foreground=color_schema['fg'],
     fontsize=14,
-    padding=6,
+    padding=2,
 )
 extension_defaults = widget_defaults.copy()
 separator = widget.Sep(size_percent=50, foreground=color_schema['fg3'], linewidth =1, padding =10)
 spacer = widget.Sep(size_percent=50, foreground=color_schema['fg3'], linewidth =0, padding =10)
 
-screens = [
-    Screen(
-        top=bar.Bar(
-            [
-                widget.GroupBox(
-                    disable_drag=True,
-                    use_mouse_wheel=False,
-                    active=color_schema['fg'],
-                    inactive=color_schema['fg3'],
-                    highlight_method='line',
-                    this_current_screen_border=color_schema['dark-yellow'],
-                    hide_unused = False,
-                    rounded = False,
-                    urgent_alert_method='line',
-                    urgent_text=color_schema['dark-red']
-                ),
-                widget.WindowName(),
-					widget.CheckUpdates(
-					distro='Debian',
-					colour_have_updates=color_schema['yellow'],
-					colour_no_updates=color_schema['dark-yellow'],
-					display_format='  Updates: {updates}',
-					no_update_string= '  Updates: 0'
-               ),
-               separator,
-               widget.CPU(
-					format=" {load_percent:04}%",
-					foreground=color_schema['dark-magenta'],
-			   ),
-			   separator,
+
+#=-/ widgets /-=#
+def init_widgets_list():
+    widgets_list = [
+              widget.Sep(
+                       linewidth = 0, padding = 10,
+                       foreground = color_schema['fg'], background = color_schema['bg']
+                       ),
+              widget.Image(
+                       filename = "~/.config/qtile/qtile.png", scale = "False",
+                       background = color_schema['bg'],
+                       mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm)}
+                       ),
+
+              widget.Sep(
+                       linewidth = 0, padding = 0,
+                       foreground = color_schema['bg'],
+                       background = color_schema['bg0']
+                       ),
+             widget.TextBox(
+                       text = '', font = "JetBrainsMono Nerd Font", fontsize = 37,
+                       background = color_schema['bg'], foreground = color_schema['dark-green'],
+                       padding = 0
+                       ),
+             widget.TextBox(
+                       text = '', font = "JetBrainsMono Nerd Font", fontsize = 37,
+                       background = color_schema['dark-green'], foreground = color_schema['bg0'],
+                       padding = 0
+                       ),
+              widget.GroupBox(
+                       font = "FontAwesome Bold", fontsize = 14,
+                       margin_y = 3, margin_x = 0, padding_y = 5, padding_x = 3,
+                       borderwidth = 3, rounded = False,
+                       active = color_schema['fg'], inactive = color_schema['dark-green'],
+                       highlight_color = color_schema['bg0'], highlight_method = "line",
+                       this_current_screen_border = color_schema['cyan'], this_screen_border = color_schema['dark-red'],
+                       other_current_screen_border = color_schema['cyan'], other_screen_border = color_schema['dark-cyan'],
+                       background = color_schema['bg0'], foreground = color_schema['fg'],
+                       ),
+             widget.TextBox(
+                       text = '', font = "JetBrainsMono Nerd Font", fontsize = 37,
+                       background = color_schema['bg0'], foreground = color_schema['bg'],
+                       padding = 0
+                       ),
+             # widget.TextBox(
+             #           text = '', font = "JetBrainsMono Nerd Font", fontsize = 37,
+             #           foreground = color_schema['bg0'], background = color_schema['bg0'],
+             #           padding = 0
+             #           ),
+              widget.WindowName(
+                       foreground = color_schema['fg'], 
+                       # background = color_schema['bg0'],
+                       padding = 0
+                       ),
+              widget.TextBox(
+                       text ='', font = "JetBrainsMono Nerd Font", fontsize = 37,
+                       foreground = color_schema['bg0'],
+                       # background = color_schema['bg0'],
+                       padding = 0
+                       ),
+              widget.CurrentLayout(
+                       foreground = color_schema['dark-green'], background = color_schema['bg0'],
+                       padding = 5
+                       ),
+              widget.CurrentLayoutIcon(
+                       custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons")],
+                       background = color_schema['bg0'], foreground = color_schema['fg'],
+                       padding = 2, scale = 0.7
+                       ),
                widget.Memory(
                 format='󰻠{MemUsed: .0f}{mm}/{MemTotal: .0f}{mm}',
                 measure_mem='G',
-                foreground=color_schema['magenta']
+                foreground=color_schema['dark-green'],
+                background=color_schema['bg0']
                ),
-               separator,
-                widget.Clock(format=' %a, %b %-d',
-					foreground=color_schema['fg3']
-				),
-				widget.Clock(format='%-I:%M %p',
-					foreground=color_schema['fg9']
-				),
-				separator,
+              widget.TextBox(
+                       text='', font = "JetBrainsMono Nerd Font", fontsize = 37,
+                       foreground = color_schema['bg'], background = color_schema['bg0'],
+                       padding = 0
+                       ),
+               widget.CPU(
+					format=" {load_percent:04}%",
+					foreground=color_schema['dark-green'],
+			   ),
+              widget.TextBox(
+                       text = '', font = "JetBrainsMono Nerd Font", fontsize = 37,
+                       foreground = color_schema['dark-green'], background = color_schema['bg'],
+                       padding = 0
+                       ),
                widget.Volume(
 					fmt="󰕾 {}",
 					mute_command="amixer -D pulse set Master toggle",
-					foreground=color_schema['red']
+					foreground=color_schema['fg'],
+                    background=color_schema['dark-green']
             ),
-				separator,
-				widget.CurrentLayoutIcon(
-                    custom_icon_paths=["/home/drew/.config/qtile/icons/layouts"],
-                    scale=0.5,
-                    padding=0
-                ),
-                separator,
-                widget.Systray(
-					padding = 6,
-				),
-				spacer,
-            ],
-            24,
-            # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
-            # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
-        ),
-    ),
-]
+              widget.TextBox(
+                       text = '', font = "JetBrainsMono Nerd Font", fontsize = 37,
+                       foreground = color_schema['bg'], background = color_schema['dark-green'],
+                       padding = 0
+                       ),
+              widget.Clock(
+                       foreground = color_schema['dark-green'], background = color_schema['bg'],
+                       format = "%A, %B %d - %l:%M %p",
+                       padding = 5
+                       ),
+              widget.Systray(
+                       background = color_schema['bg'],
+                       padding = 5
+                       ),
+              widget.TextBox(
+                       text = '', font = "JetBrainsMono Nerd Font", fontsize = 37,
+                       foreground = color_schema['bg'], background = color_schema['bg'],
+                       padding = 0
+                       ),
+              widget.Image(
+                       filename = "~/.config/qtile/debian_bg.png", scale = "False",
+                       background = color_schema['bg'],
+                       mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm)}
+                       ),
+
+              widget.Sep(
+                       linewidth = 0, padding = 10,
+                       foreground = color_schema['fg'], background = color_schema['bg'],
+                       ),
+              ]
+    return widgets_list
+
+#=-/ set bar to screen /-=#
+def init_widgets_screen1():
+    widgets_screen1 = init_widgets_list()
+    return widgets_screen1
+
+
+#=-/ Set bar height and opacity, also set wallpaper /-=#
+def init_screens():
+    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), opacity=1.0, size=25),
+            wallpaper='~/.config/qtile/leafs.jpg',
+            wallpaper_mode='fill')]
+
+#=-/ Initiate functions for screens and widgets /-=#
+if __name__ in ["config", "__main__"]:
+    screens = init_screens()
+    widgets_list = init_widgets_list()
+    widgets_screen1 = init_widgets_screen1()
+
 
 # Drag floating layouts.
 mouse = [
