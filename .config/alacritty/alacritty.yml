@@ -1,12 +1,12 @@
 font:
-  size: 13
+  size: 14
   offset:
     y: 8 
   glyph_offset:
     y: 4
   normal:
-    # family: "Mononoki Nerd Font"
-    family: "JetBrainsMono Nerd Font"
+    family: "Mononoki Nerd Font"
+    # family: "JetBrainsMono Nerd Font"
 window:
   padding:
     x: 5
@@ -14,7 +14,7 @@ window:
   dimensions:
     columns: 120
     lines: 40
-  opacity: 0.93
+  opacity: 0.83
   decorations: full
 
 cursor:
@@ -30,8 +30,8 @@ scrolling:
   auto_scroll: true
 import:
   # uncomment the flavour you want below:
-  - ~/.config/alacritty/themes/gruvbox_dark.yml
-  # - ~/.config/alacritty/themes/gruvbox_material_medium_dark.yml
+  # - ~/.config/alacritty/themes/gruvbox_dark.yml
+  - ~/.config/alacritty/themes/gruvbox_material_medium_dark.yml
   # - ~/.dotfiles/alacritty/oxocarbon-dark.yml
   # - ~/.dotfiles/alacritty/themes/poimandres-storm.yml
  # - ~/.dotfiles/alacritty/catppuccin-mocha.yml

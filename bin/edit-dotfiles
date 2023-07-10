@@ -1,5 +1,5 @@
 #!/bin/bash
 
-cd ~/OS/dotfiles 
+cd ~/OS/dotfiles/.config
 nvim
 
