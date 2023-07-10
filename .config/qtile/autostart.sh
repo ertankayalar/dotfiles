@@ -4,7 +4,7 @@
 nm-applet &
 
 # background
-feh --bg-scale ~/Wallpapers/mike-enerio-XsH3wpZzBKc-unsplash.jpg &
+# feh --bg-scale ~/Wallpapers/mike-enerio-XsH3wpZzBKc-unsplash.jpg &
 # feh --bg-scale ~/.config/backgrounds/Wallpaperkiss_1208315.jpg &
 
 # compositor
