@@ -6,7 +6,7 @@ super + b
     librewolf 
 
 super + Return
-	alacritty
+    kitty	
 
 # rofi launchers
 super + space

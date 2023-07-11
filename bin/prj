@@ -1,0 +1,6 @@
+
+#!/bin/bash
+
+cd ~/Projects/$1
+nvim
+

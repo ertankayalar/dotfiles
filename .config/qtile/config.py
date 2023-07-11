@@ -128,10 +128,13 @@ keys = [
 
          
          #=-/ Multimedia keys /-=#
-         Key([], "XF86AudioLowerVolume", lazy.spawn("pactl set-sink-volume 0 -10%")),
-         Key([], "XF86AudioRaiseVolume", lazy.spawn("pactl set-sink-volume 0 +10%")),
-         Key([], "XF86AudioMute", lazy.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle")),
+         Key([], "XF86AudioLowerVolume", lazy.spawn("changevolume down")),
+         Key([], "XF86AudioRaiseVolume", lazy.spawn("changevolume up")),
+         Key([], "XF86AudioMute", lazy.spawn("changevolume mute")),
 
+         # Key([], "XF86AudioLowerVolume", lazy.spawn("pactl set-sink-volume 0 -10%")),
+         # Key([], "XF86AudioRaiseVolume", lazy.spawn("pactl set-sink-volume 0 +10%")),
+         # Key([], "XF86AudioMute", lazy.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle")),
 # # CLOSE WINDOW, RELOAD AND QUIT QTILE
 #     Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
 #     Key([mod, "shift"], "r", lazy.reload_config(), desc="Reload the config"),
@@ -149,8 +152,8 @@ keys = [
     Key([mod], "l", lazy.layout.right()),
 
 # MOVE WINDOWS UP OR DOWN,LEFT OR RIGHT USING VIM KEYS
-    Key([mod, "shift"], "k", lazy.layout.shuffle_up()),
-    Key([mod, "shift"], "j", lazy.layout.shuffle_down()),
+    # Key([mod, "shift"], "k", lazy.layout.shuffle_up()),
+    # Key([mod, "shift"], "j", lazy.layout.shuffle_down()),
     Key([mod, "shift"], "h", lazy.layout.swap_column_left()),
     Key([mod, "shift"], "l", lazy.layout.swap_column_right()),
 
@@ -253,7 +256,7 @@ layouts = [
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
     layout.Matrix(),
-    layout.MonadTall(),
+    layout.MonadTall(border_width=4),
     layout.MonadWide(),
     layout.RatioTile(),
     # layout.Tile(),
