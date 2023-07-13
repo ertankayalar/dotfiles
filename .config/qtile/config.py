@@ -285,7 +285,7 @@ def init_widgets_list():
                widget.Volume(
 					fmt="󰕾 {}",
 					mute_command="amixer -D pulse set Master toggle",
-					foreground=colors['fg'],
+					foreground=colors['bg'],
                     background=colors['dark-green']
             ),
               widget.TextBox(
