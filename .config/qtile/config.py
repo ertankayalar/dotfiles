@@ -172,7 +172,7 @@ layouts = [
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
     layout.Matrix(),
-    layout.MonadTall(border_width=4),
+    layout.MonadTall(border_width=4,ratio=0.7, min_ratio=0.20, max_ratio=0.80),
     layout.MonadWide(),
     layout.RatioTile(),
     # layout.Tile(),
