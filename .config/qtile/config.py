@@ -10,7 +10,7 @@ import subprocess
 from libqtile import hook
 
 # color schema
-from colors_jagl import colors
+from colors import colors
 
 # test
 print("dark-green:", colors['dark-green'])
