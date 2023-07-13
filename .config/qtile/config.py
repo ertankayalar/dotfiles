@@ -9,6 +9,11 @@ import subprocess
 
 from libqtile import hook
 
+# color schema
+from colors import colors
+
+print("dark-green:", colors['dark-green'])
+
 @hook.subscribe.startup_once
 def autostart():
     home = os.path.expanduser('~/.config/qtile/autostart.sh')
@@ -48,62 +53,6 @@ _jagl = {
     'fg9':          '#bac2de'
 }
 
-_gruvbox = {
-    'bg':           '#282828',
-    'fg':           '#d4be98',
-    'dark-red':     '#ea6962',
-    'red':          '#ea6962',
-    'dark-green':   '#a9b665',
-    'green':        '#a9b665',
-    'dark-yellow':  '#e78a4e',
-    'yellow':       '#d8a657',
-    'dark-blue':    '#7daea3',
-    'blue':         '#7daea3',
-    'dark-magenta': '#d3869b',
-    'magenta':      '#d3869b',
-    'dark-cyan':    '#89b482',
-    'cyan':         '#89b482',
-    'dark-gray':    '#665c54',
-    'gray':         '#928374',
-
-    'fg4':          '#766f64',
-    'fg3':          '#665c54',
-    'fg2':          '#504945',
-    'fg1':          '#3c3836',
-    'bg0':          '#32302f',
-    'fg0':          '#1d2021',
-    'fg9':          '#ebdbb2'
-}
-_green = {
-
-    'bg':           '#1f2428',
-    'fg':           '#dfdfdf',
-    'dark-red':     '#d84949',
-    'red':          '#ff6c6b',
-    'dark-green':   '#5f875f',
-    'green':        '#a9b665',
-    'dark-yellow':  '#e78a4e',
-    'yellow':       '#d8a657',
-    'dark-blue':    '#51afef',
-    'blue':         '#46d9ff',
-    'dark-magenta': '#d3869b',
-    'magenta':      '#d3869b',
-    'dark-cyan':    '#89b482',
-    'cyan':         '#89b482',
-    'dark-gray':    '#1c1f24',
-    'gray':         '#32302f',
-
-    'fg4':          '#766f64',
-    'fg3':          '#665c54',
-    'fg2':          '#FFFFFF',
-    'fg1':          '#3c3836',
-    'bg0':          '#32302f',
-    'fg0':          '#1d2021',
-    'fg9':          '#ebdbb2',
-    'bgt':          '#000000'
-
-        }
-color_schema = _green
 
 
 keys = [
@@ -250,7 +199,7 @@ for i in groups:
     )
 
 layouts = [
-    layout.Columns(margin=3, num_columns=3, insert_position=1, border_focus=color_schema['cyan'], border_normal=color_schema['dark-blue'], border_width=4),
+    layout.Columns(margin=3, num_columns=3, insert_position=1, border_focus=colors['cyan'], border_normal=colors['dark-blue'], border_width=4),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
@@ -268,14 +217,14 @@ layouts = [
 #=-/ Default settings for widgets /-=#
 widget_defaults = dict(
 	font='JetBrainsMono Nerd Font',
-    background=color_schema['bg'],
-    foreground=color_schema['fg'],
+    background=colors['bg'],
+    foreground=colors['fg'],
     fontsize=14,
     padding=2,
 )
 extension_defaults = widget_defaults.copy()
-separator = widget.Sep(size_percent=50, foreground=color_schema['fg3'], linewidth =1, padding =10)
-spacer = widget.Sep(size_percent=50, foreground=color_schema['fg3'], linewidth =0, padding =10)
+separator = widget.Sep(size_percent=50, foreground=colors['fg3'], linewidth =1, padding =10)
+spacer = widget.Sep(size_percent=50, foreground=colors['fg3'], linewidth =0, padding =10)
 
 
 #=-/ widgets /-=#
@@ -283,123 +232,123 @@ def init_widgets_list():
     widgets_list = [
               widget.Sep(
                        linewidth = 0, padding = 10,
-                       foreground = color_schema['fg'], background = color_schema['bg']
+                       foreground = colors['fg'], background = colors['bg']
                        ),
               widget.Image(
                        filename = "~/.config/qtile/qtile.png", scale = "False",
-                       background = color_schema['bg'],
+                       background = colors['bg'],
                        mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm)}
                        ),
 
               widget.Sep(
                        linewidth = 0, padding = 0,
-                       foreground = color_schema['bg'],
-                       background = color_schema['bg0']
+                       foreground = colors['bg'],
+                       background = colors['bg0']
                        ),
              widget.TextBox(
                        text = '', font = "JetBrainsMono Nerd Font", fontsize = 37,
-                       background = color_schema['bg'], foreground = color_schema['dark-green'],
+                       background = colors['bg'], foreground = colors['dark-green'],
                        padding = 0
                        ),
              widget.TextBox(
                        text = '', font = "JetBrainsMono Nerd Font", fontsize = 37,
-                       background = color_schema['dark-green'], foreground = color_schema['bg0'],
+                       background = colors['dark-green'], foreground = colors['bg0'],
                        padding = 0
                        ),
               widget.GroupBox(
                        font = "FontAwesome Bold", fontsize = 14,
                        margin_y = 3, margin_x = 0, padding_y = 5, padding_x = 3,
                        borderwidth = 3, rounded = False,
-                       active = color_schema['fg'], inactive = color_schema['dark-green'],
-                       highlight_color = color_schema['bg0'], highlight_method = "line",
-                       this_current_screen_border = color_schema['cyan'], this_screen_border = color_schema['dark-red'],
-                       other_current_screen_border = color_schema['cyan'], other_screen_border = color_schema['dark-cyan'],
-                       background = color_schema['bg0'], foreground = color_schema['fg'],
+                       active = colors['fg'], inactive = colors['dark-green'],
+                       highlight_color = colors['bg0'], highlight_method = "line",
+                       this_current_screen_border = colors['cyan'], this_screen_border = colors['dark-red'],
+                       other_current_screen_border = colors['cyan'], other_screen_border = colors['dark-cyan'],
+                       background = colors['bg0'], foreground = colors['fg'],
                        ),
              widget.TextBox(
                        text = '', font = "JetBrainsMono Nerd Font", fontsize = 37,
-                       background = color_schema['bg0'], foreground = color_schema['bg'],
+                       background = colors['bg0'], foreground = colors['bg'],
                        padding = 0
                        ),
              # widget.TextBox(
              #           text = '', font = "JetBrainsMono Nerd Font", fontsize = 37,
-             #           foreground = color_schema['bg0'], background = color_schema['bg0'],
+             #           foreground = colors['bg0'], background = colors['bg0'],
              #           padding = 0
              #           ),
               widget.WindowName(
-                       foreground = color_schema['fg'], 
-                       # background = color_schema['bg0'],
+                       foreground = colors['fg'], 
+                       # background = colors['bg0'],
                        padding = 0
                        ),
               widget.TextBox(
                        text ='', font = "JetBrainsMono Nerd Font", fontsize = 37,
-                       foreground = color_schema['bg0'],
-                       # background = color_schema['bg0'],
+                       foreground = colors['bg0'],
+                       # background = colors['bg0'],
                        padding = 0
                        ),
               widget.CurrentLayout(
-                       foreground = color_schema['dark-green'], background = color_schema['bg0'],
+                       foreground = colors['dark-green'], background = colors['bg0'],
                        padding = 5
                        ),
               widget.CurrentLayoutIcon(
                        custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons")],
-                       background = color_schema['bg0'], foreground = color_schema['fg'],
+                       background = colors['bg0'], foreground = colors['fg'],
                        padding = 2, scale = 0.7
                        ),
                widget.Memory(
                 format='󰻠{MemUsed: .0f}{mm}/{MemTotal: .0f}{mm}',
                 measure_mem='G',
-                foreground=color_schema['dark-green'],
-                background=color_schema['bg0']
+                foreground=colors['dark-green'],
+                background=colors['bg0']
                ),
               widget.TextBox(
                        text='', font = "JetBrainsMono Nerd Font", fontsize = 37,
-                       foreground = color_schema['bg'], background = color_schema['bg0'],
+                       foreground = colors['bg'], background = colors['bg0'],
                        padding = 0
                        ),
                widget.CPU(
 					format=" {load_percent:04}%",
-					foreground=color_schema['dark-green'],
+					foreground=colors['dark-green'],
 			   ),
               widget.TextBox(
                        text = '', font = "JetBrainsMono Nerd Font", fontsize = 37,
-                       foreground = color_schema['dark-green'], background = color_schema['bg'],
+                       foreground = colors['dark-green'], background = colors['bg'],
                        padding = 0
                        ),
                widget.Volume(
 					fmt="󰕾 {}",
 					mute_command="amixer -D pulse set Master toggle",
-					foreground=color_schema['fg'],
-                    background=color_schema['dark-green']
+					foreground=colors['fg'],
+                    background=colors['dark-green']
             ),
               widget.TextBox(
                        text = '', font = "JetBrainsMono Nerd Font", fontsize = 37,
-                       foreground = color_schema['bg'], background = color_schema['dark-green'],
+                       foreground = colors['bg'], background = colors['dark-green'],
                        padding = 0
                        ),
               widget.Clock(
-                       foreground = color_schema['dark-green'], background = color_schema['bg'],
+                       foreground = colors['dark-green'], background = colors['bg'],
                        format = "%A, %B %d - %l:%M %p",
                        padding = 5
                        ),
               widget.Systray(
-                       background = color_schema['bg'],
+                       background = colors['bg'],
                        padding = 5
                        ),
               widget.TextBox(
                        text = '', font = "JetBrainsMono Nerd Font", fontsize = 37,
-                       foreground = color_schema['bg'], background = color_schema['bg'],
+                       foreground = colors['bg'], background = colors['bg'],
                        padding = 0
                        ),
               widget.Image(
                        filename = "~/.config/qtile/debian_bg.png", scale = "False",
-                       background = color_schema['bg'],
+                       background = colors['bg'],
                        mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm)}
                        ),
 
               widget.Sep(
                        linewidth = 0, padding = 10,
-                       foreground = color_schema['fg'], background = color_schema['bg'],
+                       foreground = colors['fg'], background = colors['bg'],
                        ),
               ]
     return widgets_list
