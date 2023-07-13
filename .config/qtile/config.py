@@ -12,9 +12,6 @@ from libqtile import hook
 # color schema
 from colors import colors
 
-# test
-print("dark-green:", colors['dark-green'])
-
 @hook.subscribe.startup_once
 def autostart():
     home = os.path.expanduser('~/.config/qtile/autostart.sh')
