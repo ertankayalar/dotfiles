@@ -265,7 +265,7 @@ def init_widgets_list():
                widget.Memory(
                 format='󰻠{MemUsed: .0f}{mm}/{MemTotal: .0f}{mm}',
                 measure_mem='G',
-                foreground=colors['dark-green'],
+                foreground=colors['green'],
                 background=colors['bg0']
                ),
               widget.TextBox(
@@ -275,26 +275,26 @@ def init_widgets_list():
                        ),
                widget.CPU(
 					format=" {load_percent:04}%",
-					foreground=colors['dark-green'],
+					foreground=colors['green'],
 			   ),
               widget.TextBox(
                        text = '', font = "JetBrainsMono Nerd Font", fontsize = 37,
-                       foreground = colors['dark-green'], background = colors['bg'],
+                       foreground = colors['green'], background = colors['bg'],
                        padding = 0
                        ),
                widget.Volume(
 					fmt="󰕾 {}",
 					mute_command="amixer -D pulse set Master toggle",
 					foreground=colors['bg'],
-                    background=colors['dark-green']
+                    background=colors['green']
             ),
               widget.TextBox(
                        text = '', font = "JetBrainsMono Nerd Font", fontsize = 37,
-                       foreground = colors['bg'], background = colors['dark-green'],
+                       foreground = colors['bg'], background = colors['green'],
                        padding = 0
                        ),
               widget.Clock(
-                       foreground = colors['dark-green'], background = colors['bg'],
+                       foreground = colors['green'], background = colors['bg'],
                        format = "%A, %B %d - %l:%M %p",
                        padding = 5
                        ),
