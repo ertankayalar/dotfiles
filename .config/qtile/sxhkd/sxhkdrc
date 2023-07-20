@@ -2,6 +2,32 @@
 # Application keybindings #
 #####################
 
+#Alacritty
+super + F1
+  alacritty
+
+# Librewolf
+super + F2
+  librewolf
+
+#Thunar
+super + F3
+    thunar
+
+#Vlc
+super + F6
+    vlc --video-on-top
+
+
+#thunderbird
+super + F8
+    thunderbird
+
+#Spotify
+super + F9
+    spotify
+
+
 super + b
     librewolf 
 
