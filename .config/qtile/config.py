@@ -10,7 +10,7 @@ import subprocess
 from libqtile import hook
 
 # color schema
-from colors import colors
+from colors_vimix import colors
 
 @hook.subscribe.startup_once
 def autostart():
@@ -18,20 +18,46 @@ def autostart():
     subprocess.Popen([home])
 
 mod = "mod4"
+mod1 = "alt"
+mod2 = "control"
+
 #terminal = guess_terminal()
 myTerm = "alacritty" 
 myBrowser = "librewolf"
+
+@lazy.function
+def window_to_prev_group(qtile):
+    if qtile.currentWindow is not None:
+        i = qtile.groups.index(qtile.currentGroup)
+        qtile.currentWindow.togroup(qtile.groups[i - 1].name)
+
+@lazy.function
+def window_to_next_group(qtile):
+    if qtile.currentWindow is not None:
+        i = qtile.groups.index(qtile.currentGroup)
+        qtile.currentWindow.togroup(qtile.groups[i + 1].name)
+
 
 keys = [
 
 # Add dedicated sxhkdrc to autostart.sh script
 
          #=-/ Main sys control /-=#
-         Key([mod], "Tab", lazy.next_layout(), desc='Toggle through layouts'),
+         # Key([mod2], "Tab", lazy.next_layout(), desc='Toggle through layouts'),
          Key([mod], "q", lazy.window.kill(), desc="kill focused window"),
          Key([mod, "shift"], "q", lazy.shutdown(), desc="shutdown qtile"),
          Key([mod, "control"], "r", lazy.restart(), desc='Restart Qtile'),
          Key([mod, "shift"], "r", lazy.reload_config(), desc="reload the config"),
+
+#CHANGE WORKSPACES
+        Key([mod], "Tab", lazy.screen.next_group()),
+        Key([mod, "shift" ], "Tab", lazy.screen.prev_group()),
+        Key(["mod1"], "Tab", lazy.screen.next_group()),
+        Key(["mod1", "shift"], "Tab", lazy.screen.prev_group()),
+
+# QTILE LAYOUT KEYS
+    # Key([mod], "n", lazy.layout.normalize()),
+    Key(["mod1"], "Tab", lazy.next_layout()),
 
          #=-/ Terminals /-=#
          Key([mod, "shift"], "Return", lazy.spawn(myTerm), desc='Run Launcher'),
@@ -138,8 +164,27 @@ keys = [
 # end of keys
 
 # groups = [Group(i) for i in ["", "", "", "", "阮", "", "", "", ""]]
-groups = [Group(i) for i in ["1", "2", "3", "4", "5", "6", "7", "8", "9"]]
-group_hotkeys = "123456789"
+# groups = [Group(i) for i in ["1", "2", "3", "4", "5", "6", "7", "8", "9"]]
+# group_hotkeys = "123456789"
+
+groups = []
+
+group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+#group_labels = ["1 ", "2 ", "3 ", "4 ", "5 ", "6 ", "7 ", "8 ", "9 ", "0",]
+# group_labels = ["", "", "", "", "", "", "", "", "", "",]
+#group_labels = ["Web", "Edit/chat", "Image", "Gimp", "Meld", "Video", "Vb", "Files", "Mail", "Music",]
+group_labels = ["Dev", "Web", "Sys", "Chat", "Gfx", "Vid", "Vrt",  "Mail", "Msc",]
+
+group_layouts = ["monadtall", "columns", "matrix", "columns", "columns", "monadwide", "columns", "columns", "columns", "matrix",]
+
+
+for i in range(len(group_names)):
+    groups.append(
+        Group(
+            name=group_names[i],
+            layout=group_layouts[i].lower(),
+            label=group_labels[i],
+        ))
 
 for i in groups:
     keys.extend(
@@ -368,6 +413,46 @@ floating_layout = layout.Floating(
 auto_fullscreen = True
 focus_on_window_activation = "smart"
 reconfigure_screens = True
+
+
+
+#########################################################
+################ assgin apps to groups ##################
+#########################################################
+@hook.subscribe.client_new
+def assign_app_group(client):
+    d = {}
+    # Use xprop fo find  the value of WM_CLASS(STRING) -> First field is sufficient 
+
+    d[group_names[0]] = ["Alacritty", "kitty", "Atom", "Subl", "Geany", "Code-oss", "Code", ]
+    d[group_names[1]] = ["Navigator", "Firefox", "Vivaldi-stable", "Vivaldi-snapshot", "Chromium", "Google-chrome", "Brave", "Brave-browser", "navigator", "firefox", "vivaldi-stable", "vivaldi-snapshot", "chromium", "google-chrome", "brave", "brave-browser", ]
+
+    d[group_names[2]] = ["Thunar", "Nemo", "Caja", "Nautilus", "org.gnome.Nautilus", "Pcmanfm", "Pcmanfm-qt",
+               "thunar", "nemo", "caja", "nautilus", "org.gnome.nautilus", "pcmanfm", "pcmanfm-qt", ]
+    d[group_names[3]] = [ "TelegramDesktop", "Discord"]
+    d[group_names[4]] = ["Inkscape", "Nomacs", "Ristretto", "Nitrogen", "Feh",
+              "inkscape", "nomacs", "ristretto", "nitrogen", "feh", "Gimp", "gimp"]
+    d[group_names[5]] = ["Vlc","vlc", "Mpv", "mpv" ]
+    d[group_names[6]] = ["VirtualBox Manager", "VirtualBox Machine", "Vmplayer",
+                        "virtualbox manager", "virtualbox machine", "vmplayer", ]
+    d[group_names[7]] = ["Evolution", "Geary", "Mail", "Thunderbird",
+               "evolution", "geary", "mail", "thunderbird" ]
+    d[group_names[8]] = ["Spotify", "Pragha", "Clementine", "Deadbeef", "Audacious",
+              "spotify", "pragha", "clementine", "deadbeef", "audacious" ]
+
+    wm_class = client.window.get_wm_class()[0]
+
+    for i in range(len(d)):
+        if wm_class in list(d.values())[i]:
+             group = list(d.keys())[i]
+             client.togroup(group)
+             client.group.cmd_toscreen(toggle=False)
+
+# END
+# ASSIGN APPLICATIONS TO A SPECIFIC GROUPNAME
+
+
+
 
 # If things like steam games want to auto-minimize themselves when losing
 # focus, should we respect this or not?
