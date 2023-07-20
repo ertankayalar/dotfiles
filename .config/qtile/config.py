@@ -210,20 +210,29 @@ for i in groups:
         ]
     )
 
+def init_layout_theme():
+    return {"margin":5,
+            "border_width":2,
+            "border_focus": colors['fg1'],
+            "border_normal": colors['bg1']
+            }
+
+layout_theme = init_layout_theme()
+
 layouts = [
-    layout.Columns(margin=3, num_columns=3, insert_position=1, border_focus=colors['cyan'], border_normal=colors['dark-green'], border_width=4),
-    layout.Max(),
+    layout.Columns(margin=3, num_columns=3, insert_position=1, border_focus=colors['fg1'], border_normal=colors['fg'], border_width=4),
+    layout.Max(**layout_theme),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
-    layout.Matrix(),
-    layout.MonadTall(border_width=4,ratio=0.7, min_ratio=0.20, max_ratio=0.80),
-    layout.MonadWide(),
-    layout.RatioTile(),
-    # layout.Tile(),
+    layout.Matrix(**layout_theme),
+    layout.MonadTall(border_width=4,ratio=0.7, min_ratio=0.20, max_ratio=0.80, border_focus=colors['fg1'], border_normal=colors['dark-green']),
+    layout.MonadWide(**layout_theme),
+    layout.RatioTile(**layout_theme),
+    layout.Tile(**layout_theme),
     # layout.TreeTab(),
-    # layout.VerticalTile(),
-    layout.Zoomy(),
+    layout.VerticalTile(**layout_theme),
+    layout.Zoomy(**layout_theme),
 ]
 
 #=-/ Default settings for widgets /-=#
@@ -255,91 +264,91 @@ def init_widgets_list():
               widget.Sep(
                        linewidth = 0, padding = 0,
                        foreground = colors['bg'],
-                       background = colors['bg0']
+                       background = colors['bg3']
                        ),
              widget.TextBox(
                        text = '', font = "JetBrainsMono Nerd Font", fontsize = 37,
-                       background = colors['bg'], foreground = colors['dark-green'],
+                       background = colors['bg'], foreground = colors['fg1'],
                        padding = 0
                        ),
              widget.TextBox(
                        text = '', font = "JetBrainsMono Nerd Font", fontsize = 37,
-                       background = colors['dark-green'], foreground = colors['bg0'],
+                       background = colors['fg1'], foreground = colors['bg3'],
                        padding = 0
                        ),
               widget.GroupBox(
                        font = "FontAwesome Bold", fontsize = 14,
                        margin_y = 3, margin_x = 0, padding_y = 5, padding_x = 3,
                        borderwidth = 3, rounded = False,
-                       active = colors['fg'], inactive = colors['dark-green'],
-                       highlight_color = colors['bg0'], highlight_method = "line",
+                       active = colors['fg'], inactive = colors['fg1'],
+                       highlight_color = colors['bg3'], highlight_method = "line",
                        this_current_screen_border = colors['cyan'], this_screen_border = colors['dark-red'],
                        other_current_screen_border = colors['cyan'], other_screen_border = colors['dark-cyan'],
-                       background = colors['bg0'], foreground = colors['fg'],
+                       background = colors['bg3'], foreground = colors['fg'],
                        ),
              widget.TextBox(
                        text = '', font = "JetBrainsMono Nerd Font", fontsize = 37,
-                       background = colors['bg0'], foreground = colors['bg'],
+                       background = colors['bg3'], foreground = colors['bg'],
                        padding = 0
                        ),
              # widget.TextBox(
              #           text = '', font = "JetBrainsMono Nerd Font", fontsize = 37,
-             #           foreground = colors['bg0'], background = colors['bg0'],
+             #           foreground = colors['bg3'], background = colors['bg3'],
              #           padding = 0
              #           ),
               widget.WindowName(
-                       foreground = colors['fg'], 
-                       # background = colors['bg0'],
+                       foreground = colors['fg2'], 
+                       # background = colors['bg3'],
                        padding = 0
                        ),
               widget.TextBox(
                        text ='', font = "JetBrainsMono Nerd Font", fontsize = 37,
-                       foreground = colors['bg0'],
-                       # background = colors['bg0'],
+                       foreground = colors['bg3'],
+                       # background = colors['bg3'],
                        padding = 0
                        ),
               widget.CurrentLayout(
-                       foreground = colors['dark-green'], background = colors['bg0'],
+                       foreground = colors['fg1'], background = colors['bg3'],
                        padding = 5
                        ),
               widget.CurrentLayoutIcon(
                        custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons")],
-                       background = colors['bg0'], foreground = colors['fg'],
+                       background = colors['bg3'], foreground = colors['fg'],
                        padding = 2, scale = 0.7
                        ),
                widget.Memory(
                 format='󰻠{MemUsed: .0f}{mm}/{MemTotal: .0f}{mm}',
                 measure_mem='G',
-                foreground=colors['green'],
-                background=colors['bg0']
+                foreground=colors['fg1'],
+                background=colors['bg3']
                ),
               widget.TextBox(
                        text='', font = "JetBrainsMono Nerd Font", fontsize = 37,
-                       foreground = colors['bg'], background = colors['bg0'],
+                       foreground = colors['bg'], background = colors['bg3'],
                        padding = 0
                        ),
                widget.CPU(
 					format=" {load_percent:04}%",
-					foreground=colors['green'],
+					foreground=colors['fg1'],
 			   ),
               widget.TextBox(
                        text = '', font = "JetBrainsMono Nerd Font", fontsize = 37,
-                       foreground = colors['green'], background = colors['bg'],
+                       foreground = colors['fg1'], background = colors['bg'],
                        padding = 0
                        ),
                widget.Volume(
 					fmt="󰕾 {}",
 					mute_command="amixer -D pulse set Master toggle",
 					foreground=colors['bg'],
-                    background=colors['green']
+                    background=colors['fg1']
             ),
               widget.TextBox(
                        text = '', font = "JetBrainsMono Nerd Font", fontsize = 37,
-                       foreground = colors['bg'], background = colors['green'],
+                       foreground = colors['bg'], background = colors['fg1'],
                        padding = 0
                        ),
               widget.Clock(
-                       foreground = colors['green'], background = colors['bg'],
+                       foreground = colors['fg1'], background = colors['bg'],
                        format = "%A, %B %d - %l:%M %p",
                        padding = 5
                        ),
