@@ -277,7 +277,7 @@ def init_widgets_list():
                        padding = 0
                        ),
               widget.GroupBox(
-                       font = "FontAwesome Bold", fontsize = 14,
+                       font = "JetBrainsMono Nerd Font", fontsize = 14,
                        margin_y = 3, margin_x = 0, padding_y = 5, padding_x = 3,
                        borderwidth = 3, rounded = False,
                        active = colors['fg'], inactive = colors['fg1'],
