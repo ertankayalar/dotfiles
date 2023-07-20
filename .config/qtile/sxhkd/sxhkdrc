@@ -74,8 +74,8 @@ super + c
 super + d
 	discord
 
-super + o
-	obs
+super + r
+	recordmydesktop
 
 super + t
 	~/bin/time_date
