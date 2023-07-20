@@ -5,8 +5,8 @@ font:
   glyph_offset:
     y: 4
   normal:
-    family: "Mononoki Nerd Font"
-    # family: "JetBrainsMono Nerd Font"
+    # family: "Mononoki Nerd Font"
+    family: "JetBrainsMono Nerd Font"
 window:
   padding:
     x: 5
