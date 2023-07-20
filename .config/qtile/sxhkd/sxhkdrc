@@ -26,8 +26,7 @@ super + F8
 
 #Spotify
 super + F9
-    spotify
-
+    flatpak run com.spotify.Client
 
 # SUPER + ... KEYS
 super + w

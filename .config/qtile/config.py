@@ -211,7 +211,7 @@ for i in groups:
     )
 
 layouts = [
-    layout.Columns(margin=3, num_columns=3, insert_position=1, border_focus=colors['cyan'], border_normal=colors['dark-blue'], border_width=4),
+    layout.Columns(margin=3, num_columns=3, insert_position=1, border_focus=colors['cyan'], border_normal=colors['dark-green'], border_width=4),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
@@ -429,7 +429,7 @@ def assign_app_group(client):
 
     d[group_names[2]] = ["Thunar", "Nemo", "Caja", "Nautilus", "org.gnome.Nautilus", "Pcmanfm", "Pcmanfm-qt",
                "thunar", "nemo", "caja", "nautilus", "org.gnome.nautilus", "pcmanfm", "pcmanfm-qt", ]
-    d[group_names[3]] = [ "TelegramDesktop", "Discord"]
+    d[group_names[3]] = [ "TelegramDesktop", "telegram-desktop", "Discord"]
     d[group_names[4]] = ["Inkscape", "Nomacs", "Ristretto", "Nitrogen", "Feh",
               "inkscape", "nomacs", "ristretto", "nitrogen", "feh", "Gimp", "gimp"]
     d[group_names[5]] = ["Vlc","vlc", "Mpv", "mpv" ]
