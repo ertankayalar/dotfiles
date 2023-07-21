@@ -56,6 +56,30 @@ local plugins = {
             }
         end,
     },
+    -- surround
+    {
+        "kylechui/nvim-surround",
+        version = "*", -- Use for stability; omit to use `main` branch for the latest features
+        event = "VeryLazy",
+        config = function()
+            require("nvim-surround").setup({
+                -- Configuration here, or leave empty to use defaults
+            })
+        end
+    },
+    -- todo-comments
+    {
+        "folke/todo-comments.nvim",
+        dependencies = "nvim-lua/plenary.nvim",
+        config = function()
+            require("todo-comments").setup {
+                -- your configuration comes here
+                -- or leave it empty to use the default settings
+                -- refer to the configuration section below
+            }
+        end
+    },
+
   -- { 'wuelnerdotexe/vim-astro',
   --    lazy = true,
   -- enabled = true},
