@@ -252,19 +252,24 @@ spacer = widget.Sep(size_percent=50, foreground=colors['fg3'], linewidth =0, pad
 def init_widgets_list():
     widgets_list = [
               widget.Sep(
-                       linewidth = 0, padding = 10,
-                       foreground = colors['fg'], background = colors['bg']
+                       linewidth = 0, padding = 5,
+                       foreground = colors['fg'], background = colors['bg2']
                        ),
               widget.Image(
                        filename = "~/.config/qtile/qtile.png", scale = "False",
-                       background = colors['bg'],
+                       background = colors['bg2'],
                        mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm)}
                        ),
 
-              widget.Sep(
-                       linewidth = 0, padding = 0,
-                       foreground = colors['bg'],
-                       background = colors['bg3']
+              # widget.Sep(
+              #          linewidth = 0, padding = 10,
+              #          foreground = colors['bg2'],
+              #          background = colors['bg2']
+              #          ),
+             widget.TextBox(
+                       text = '', font = "JetBrainsMono Nerd Font", fontsize = 37,
+                       background = colors['bg2'], foreground = colors['bg'],
+                       padding = 0
                        ),
              # widget.TextBox(
              #           text = '', font = "JetBrainsMono Nerd Font", fontsize = 37,
@@ -298,23 +303,29 @@ def init_widgets_list():
              #           ),
               widget.WindowName(
                        foreground = colors['fg2'], 
-                       # background = colors['bg3'],
+                       # background = colors['bg'],
                        padding = 0
                        ),
               widget.TextBox(
                        text ='', font = "JetBrainsMono Nerd Font", fontsize = 37,
-                       foreground = colors['bg3'],
+                       foreground = colors['bg2'],
                        # background = colors['bg3'],
                        padding = 0
                        ),
               widget.CurrentLayout(
-                       foreground = colors['fg1'], background = colors['bg3'],
+                       foreground = colors['fg1'], background = colors['bg2'],
                        padding = 5
                        ),
               widget.CurrentLayoutIcon(
                        custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons")],
-                       background = colors['bg3'], foreground = colors['fg'],
+                       background = colors['bg2'], foreground = colors['fg'],
                        padding = 2, scale = 0.7
+                       ),
+              widget.TextBox(
+                       text ='', font = "JetBrainsMono Nerd Font", fontsize = 37,
+                       foreground = colors['bg3'],
+                       background = colors['bg2'],
+                       padding = 0
                        ),
                widget.Memory(
                 format='󰻠{MemUsed: .0f}{mm}/{MemTotal: .0f}{mm}',
@@ -349,7 +360,7 @@ def init_widgets_list():
                        ),
               widget.Clock(
                        foreground = colors['fg1'], background = colors['bg'],
-                       format = "%A, %B %d - %l:%M %p",
+            format = "%d-%m %a %H:%M",
                        padding = 5
                        ),
               widget.Systray(
