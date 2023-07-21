@@ -266,16 +266,16 @@ def init_widgets_list():
                        foreground = colors['bg'],
                        background = colors['bg3']
                        ),
-             widget.TextBox(
-                       text = '', font = "JetBrainsMono Nerd Font", fontsize = 37,
-                       background = colors['bg'], foreground = colors['fg1'],
-                       padding = 0
-                       ),
-             widget.TextBox(
-                       text = '', font = "JetBrainsMono Nerd Font", fontsize = 37,
-                       background = colors['fg1'], foreground = colors['bg3'],
-                       padding = 0
-                       ),
+             # widget.TextBox(
+             #           text = '', font = "JetBrainsMono Nerd Font", fontsize = 37,
+             #           background = colors['bg'], foreground = colors['fg1'],
+             #           padding = 0
+             #           ),
+             # widget.TextBox(
+             #           text = '', font = "JetBrainsMono Nerd Font", fontsize = 37,
+             #           background = colors['fg1'], foreground = colors['bg3'],
+             #           padding = 0
+             #           ),
               widget.GroupBox(
                        font = "JetBrainsMono Nerd Font", fontsize = 14,
                        margin_y = 3, margin_x = 0, padding_y = 5, padding_x = 3,
@@ -356,21 +356,21 @@ def init_widgets_list():
                        background = colors['bg'],
                        padding = 5
                        ),
-              widget.TextBox(
-                       text = '', font = "JetBrainsMono Nerd Font", fontsize = 37,
-                       foreground = colors['bg'], background = colors['bg'],
-                       padding = 0
-                       ),
-              widget.Image(
-                       filename = "~/.config/qtile/debian_bg.png", scale = "False",
-                       background = colors['bg'],
-                       mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm)}
-                       ),
-
-              widget.Sep(
-                       linewidth = 0, padding = 10,
-                       foreground = colors['fg'], background = colors['bg'],
-                       ),
+              # widget.TextBox(
+              #          text = '', font = "JetBrainsMono Nerd Font", fontsize = 37,
+              #          foreground = colors['bg'], background = colors['bg'],
+              #          padding = 0
+              #          ),
+              # widget.Image(
+              #          filename = "~/.config/qtile/debian_bg.png", scale = "False",
+              #          background = colors['bg'],
+              #          mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm)}
+              #          ),
+              #
+              # widget.Sep(
+              #          linewidth = 0, padding = 10,
+              #          foreground = colors['fg'], background = colors['bg'],
+              #          ),
               ]
     return widgets_list
 
@@ -443,7 +443,7 @@ def assign_app_group(client):
               "inkscape", "nomacs", "ristretto", "nitrogen", "feh", "Gimp", "gimp"]
     d[group_names[5]] = ["Vlc","vlc", "Mpv", "mpv" ]
     d[group_names[6]] = ["VirtualBox Manager", "VirtualBox Machine", "Vmplayer",
-                        "virtualbox manager", "virtualbox machine", "vmplayer", ]
+                        "virtualbox manager", "virtualbox machine", "vmplayer","virt-manager", "Virt-manager"  ]
     d[group_names[7]] = ["Evolution", "Geary", "Mail", "Thunderbird",
                "evolution", "geary", "mail", "thunderbird" ]
     d[group_names[8]] = ["Spotify", "Pragha", "Clementine", "Deadbeef", "Audacious",
