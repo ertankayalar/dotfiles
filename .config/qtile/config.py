@@ -253,11 +253,12 @@ def init_widgets_list():
     widgets_list = [
               widget.Sep(
                        linewidth = 0, padding = 5,
-                       foreground = colors['fg'], background = colors['bg2']
+                       foreground = colors['fg'],
+                        # background = colors['bg2']
                        ),
               widget.Image(
                        filename = "~/.config/qtile/qtile.png", scale = "False",
-                       background = colors['bg2'],
+                       # background = colors['bg2'],
                        mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm)}
                        ),
 
@@ -268,7 +269,7 @@ def init_widgets_list():
               #          ),
              widget.TextBox(
                        text = '', font = "JetBrainsMono Nerd Font", fontsize = 37,
-                       background = colors['bg2'], foreground = colors['bg'],
+                       background = colors['bg'], foreground = colors['bg3'],
                        padding = 0
                        ),
              # widget.TextBox(
