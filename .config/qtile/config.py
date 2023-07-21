@@ -175,7 +175,7 @@ group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 #group_labels = ["Web", "Edit/chat", "Image", "Gimp", "Meld", "Video", "Vb", "Files", "Mail", "Music",]
 group_labels = ["Dev", "Web", "Sys", "Chat", "Gfx", "Vid", "Vrt",  "Mail", "Msc",]
 
-group_layouts = ["monadtall", "columns", "matrix", "columns", "columns", "monadwide", "columns", "columns", "columns", "matrix",]
+group_layouts = ["max", "max", "matrix", "columns", "columns", "monadwide", "max", "columns", "columns", "matrix",]
 
 
 for i in range(len(group_names)):
@@ -224,7 +224,7 @@ layouts = [
     layout.Max(**layout_theme),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
-    # layout.Bsp(),
+    layout.Bsp(),
     layout.Matrix(**layout_theme),
     layout.MonadTall(border_width=4,ratio=0.7, min_ratio=0.20, max_ratio=0.80, border_focus=colors['fg1'], border_normal=colors['dark-green']),
     layout.MonadWide(**layout_theme),
