@@ -14,7 +14,7 @@ super + F2
 
 #Thunar
 super + F3
-    thunar
+  thunar
 
 #Vlc
 super + F6
@@ -22,7 +22,7 @@ super + F6
 
 #thunderbird
 super + F8
-    thunderbird
+    /opt/thunderbird/./thunderbird
 
 #Spotify
 super + F9
