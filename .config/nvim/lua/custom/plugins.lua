@@ -4,9 +4,17 @@ local overrides = require "custom.configs.overrides"
 local plugins = {
 
   -- Override plugin definition options
+  {
+    "folke/zen-mode.nvim",
+    lazy = false,
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
+  },
   { "phelipetls/vim-hugo", lazy = false },
-  { "fatih/vim-go",
-   lazy = false },
+  { "fatih/vim-go", lazy = false },
   {
     "neovim/nvim-lspconfig",
     dependencies = {
