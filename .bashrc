@@ -215,7 +215,7 @@ eval "$(starship init bash)"
 # tools
 eval "$(zoxide init bash)"
 export PATH="$HOME/bin:$HOME/.local/bin::$PATH"
-export PATH="/usr/local/go/bin:$PATH"
+# export PATH="/usr/local/go/bin:$PATH"
 
 #PNPM
 export PNPM_HOME="$HOME/.local/share/pnpm"
@@ -229,3 +229,7 @@ export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 # PS1 Customization
 PS1="\[\e[32m\]\h\[\e[m\]\[\e[36m\]@\[\e[m\]\[\e[34m\]\u\[\e[m\] \W \$ " 
 neofetch
+# GO 
+export PATH="/usr/local/go/bin:$PATH"
+# Hugo Cache Dir 
+HUGO_CACHEDIR="$HOME/.hugo/tmp"

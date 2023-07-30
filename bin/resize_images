@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# Check if the correct number of arguments are provided
+if [ "$#" -ne 4 ]; then
+    echo "Usage: $0 input_directory output_directory resize_dimensions extension"
+    exit 1
+fi
+
+# Input directory containing images
+input_dir="$1"
+
+# Output directory to save resized images
+output_dir="$2"
+
+# Resize dimensions
+resize_dimensions="$3"
+
+file_extension="$4"
+
+# Check if the input directory exists
+if [ ! -d "$input_dir" ]; then
+    echo "Error: Input directory '$input_dir' not found."
+    exit 1
+fi
+
+# Check if the output directory exists, if not, create it
+if [ ! -d "$output_dir" ]; then
+    mkdir -p "$output_dir"
+fi
+
+for image in "$input_dir"/*."$file_extension"; do
+    # Get the filename without extension
+    filename=$(basename -- "$image")
+    filename_without_extension="${filename%.*}"
+    
+    # Convert and resize the image
+    convert "$image" -resize "$resize_dimensions" "$output_dir/$filename_without_extension.jpg"
+done
