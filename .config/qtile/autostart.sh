@@ -18,3 +18,5 @@ dunst &
 
 telegram-desktop &
 
+yandex-disk start & 
+
