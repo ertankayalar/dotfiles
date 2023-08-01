@@ -4,6 +4,10 @@ local overrides = require "custom.configs.overrides"
 local plugins = {
 
   -- Override plugin definition options
+ {
+    "aserowy/tmux.nvim",
+    lazy = false
+},
   {
     "folke/zen-mode.nvim",
     lazy = false,
