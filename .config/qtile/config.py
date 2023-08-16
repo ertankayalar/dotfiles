@@ -22,7 +22,8 @@ mod1 = "alt"
 mod2 = "control"
 
 #terminal = guess_terminal()
-myTerm = "alacritty" 
+# myTerm = "alacritty" 
+myTerm = "kitty" 
 myBrowser = "librewolf"
 
 @lazy.function
