@@ -18,6 +18,7 @@ bspc config presel_feedback_color	"#50FA7B"
 
 bspc rule -a "*" split_dir=east
 bspc rule -a firefox desktop='^1' focus=on follow=on
+bspc rule -a librewolf desktop='^1' focus=on follow=on
 bspc rule -a Firefox-esr desktop='^1' focus=on follow=on
 bspc rule -a brave-browser desktop='^1' focus=on follow=on
 bspc rule -a Vivaldi-stable desktop='^1' focus=on follow=on
@@ -60,7 +61,7 @@ clipmenud &
 
 ## apps for systray if enabled
  # volumeicon &
- # nm-applet &
+ nm-applet &
 sxhkd &
 
 # Set wallpaper
