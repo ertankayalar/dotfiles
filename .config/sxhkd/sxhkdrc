@@ -1,6 +1,42 @@
-# browser
-super + b
+
+# SUPER + FUNCTION KEYS
+
+#Alacritty
+super + F1
+  alacritty
+
+# Librewolf
+super + F2
+  librewolf
+
+#Thunar
+super + F3
+  thunar
+
+#Vlc
+super + F6
+    vlc --video-on-top
+
+#thunderbird
+super + F8
+    /opt/thunderbird/./thunderbird
+
+#Spotify
+super + F9
+    flatpak run com.spotify.Client
+
+
+
+
+# SUPER + ... KEYS
+super + w
     librewolf
+
+super + b
+    brave
+
+super + Return
+    kitty
 
 # second browser
 # super + shift + b 

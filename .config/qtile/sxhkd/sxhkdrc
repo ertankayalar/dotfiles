@@ -33,7 +33,10 @@ super + w
     librewolf
 
 super + b
-    librewolf 
+    flatpak run com.brave.Browser
+
+super + v
+    vivaldi-stable
 
 super + Return
     kitty
