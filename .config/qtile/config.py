@@ -396,7 +396,7 @@ def init_widgets_screen1():
 #=-/ Set bar height and opacity, also set wallpaper /-=#
 def init_screens():
     return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), opacity=1.0, size=25, margin=3),
-            wallpaper='~/.config/qtile/leafs.jpg',
+            wallpaper='~/.config/qtile/wallpaper1.jpg',
             wallpaper_mode='fill')]
 
 #=-/ Initiate functions for screens and widgets /-=#
