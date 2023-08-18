@@ -289,7 +289,7 @@ def init_widgets_list():
                        active = colors['fg2'],
                        inactive = colors['fg1'],
                        highlight_color = colors['bg3'], highlight_method = "line",
-                       this_current_screen_border = colors['cyan'], this_screen_border = colors['dark-red'],
+                       this_current_screen_border = colors['cyan'], this_screen_border = colors['red'],
                        other_current_screen_border = colors['cyan'], other_screen_border = colors['dark-cyan'],
                        background = colors['bg3'], foreground = colors['fg'],
                        ),
@@ -395,7 +395,7 @@ def init_widgets_screen1():
 
 #=-/ Set bar height and opacity, also set wallpaper /-=#
 def init_screens():
-    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), opacity=1.0, size=25, margin=3),
+    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), opacity=1.0, size=33, margin=3),
             wallpaper='~/.config/qtile/wallpaper1.jpg',
             wallpaper_mode='fill')]
 
