@@ -17,4 +17,8 @@ sxhkd -c ~/.config/qtile/sxhkd/sxhkdrc &
 dunst &
 
 telegram-desktop &
+yandex-disk start &
+
+# Set wallpaper
+nitrogen --restore &
 

@@ -2,7 +2,7 @@
 
 # bspc monitor -d "www" "code" "dir" "txt" "chat" "vir" "msc" "vid" "gfx" "rec"
 
-bspc monitor -d "code" "www" "dir" "chat" "txt" "gfx" "vid" "vir" "mail" "msc" 
+bspc monitor -d "code" "www" "dir" "chat" "gfx" "vid" "vir" "mail" "msc" 
 
 bspc config border_width			4
 bspc config window_gap				10
@@ -27,11 +27,11 @@ bspc rule -a Vivaldi-stable desktop='^2' focus=on follow=on
 bspc rule -a Alacritty desktop='^1' focus=on follow=on
 bspc rule -a kitty desktop='^1' focus=on follow=on
 bspc rule -a TelegramDesktop desktop='^4' 
-bspc rule -a Spotify desktop='^10' 
-bspc rule -a vlc desktop='^7' focus=on follow=on 
-bspc rule -a DesktopEditors desktop='^5' focus=on follow=on 
-bspc rule -a obsidian desktop='^5' focus=on follow=on 
-bspc rule -a Virt-manager desktop='^8' focus=on follow=on 
+bspc rule -a Spotify desktop='^9' 
+bspc rule -a vlc desktop='^6' focus=on follow=on 
+bspc rule -a DesktopEditors desktop='^3' focus=on follow=on 
+bspc rule -a obsidian desktop='^3' focus=on follow=on 
+bspc rule -a Virt-manager desktop='^7' focus=on follow=on 
 bspc rule -a qimgv state=floating center=true
 bspc rule -a Xarchiver state=floating layer=normal center=true
 bspc rule -a mpv state=floating layer=normal center=true
@@ -40,9 +40,9 @@ bspc rule -a Lxappearance state=floating layer=normal center=true
 bspc rule -a Galculator state=floating layer=normal center=true
 bspc rule -a Xfce4-terminal state=floating layer=normal center=true
 bspc rule -a Google-chrome desktop='^2' follow=on
-bspc rule -a Gimp desktop='^6' follow=on
-bspc rule -a Inkscape desktop='^6' follow=on
-bspc rule -a obs desktop='^7' follow=on
+bspc rule -a Gimp desktop='^5' follow=on
+bspc rule -a Inkscape desktop='^5' follow=on
+bspc rule -a obs desktop='^6' follow=on
 bspc rule -a discord desktop='^4' follow=on
 bspc rule -a Thunar desktop='^3' follow=on
 # bspc rule -a Geany desktop='^4' follow=on
