@@ -33,13 +33,10 @@ super + w
     librewolf
 
 super + b
-    flatpak run com.brave.Browser
-
-super + v
-    vivaldi-stable
+    librewolf 
 
 super + Return
-    kitty
+    alacritty
 
 # rofi launchers
 super + space

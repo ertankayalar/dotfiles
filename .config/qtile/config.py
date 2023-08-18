@@ -10,7 +10,7 @@ import subprocess
 from libqtile import hook
 
 # color schema
-from colors_vimix import colors
+from colors_rosepine import colors
 
 @hook.subscribe.startup_once
 def autostart():
@@ -22,8 +22,7 @@ mod1 = "alt"
 mod2 = "control"
 
 #terminal = guess_terminal()
-# myTerm = "alacritty" 
-myTerm = "kitty" 
+myTerm = "alacritty" 
 myBrowser = "librewolf"
 
 @lazy.function
@@ -213,9 +212,9 @@ for i in groups:
 
 def init_layout_theme():
     return {"margin":5,
-            "border_width":2,
+            "border_width":3,
             "border_focus": colors['fg1'],
-            "border_normal": colors['bg1']
+            "border_normal": colors['fg3']
             }
 
 layout_theme = init_layout_theme()
@@ -225,15 +224,15 @@ layouts = [
     layout.Max(**layout_theme),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
-    layout.Bsp(),
+    layout.Bsp(**layout_theme),
     layout.Matrix(**layout_theme),
-    layout.MonadTall(border_width=4,ratio=0.7, min_ratio=0.20, max_ratio=0.80, border_focus=colors['fg1'], border_normal=colors['dark-green']),
+    layout.MonadTall(border_width=3,ratio=0.7, min_ratio=0.20, max_ratio=0.80, border_focus=colors['fg'], border_normal=colors['fg2']),
     layout.MonadWide(**layout_theme),
     layout.RatioTile(**layout_theme),
     layout.Tile(**layout_theme),
     # layout.TreeTab(),
     layout.VerticalTile(**layout_theme),
-    layout.Zoomy(**layout_theme),
+    # layout.Zoomy(**layout_theme),
 ]
 
 #=-/ Default settings for widgets /-=#
@@ -287,7 +286,8 @@ def init_widgets_list():
                        font = "JetBrainsMono Nerd Font", fontsize = 14,
                        margin_y = 3, margin_x = 0, padding_y = 5, padding_x = 3,
                        borderwidth = 3, rounded = False,
-                       active = colors['fg'], inactive = colors['fg1'],
+                       active = colors['fg2'],
+                       inactive = colors['fg1'],
                        highlight_color = colors['bg3'], highlight_method = "line",
                        this_current_screen_border = colors['cyan'], this_screen_border = colors['dark-red'],
                        other_current_screen_border = colors['cyan'], other_screen_border = colors['dark-cyan'],
@@ -320,7 +320,7 @@ def init_widgets_list():
                        ),
               widget.CurrentLayoutIcon(
                        custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons")],
-                       background = colors['bg2'], foreground = colors['fg'],
+                       background = colors['bg2'], foreground = colors['fg2'],
                        padding = 2, scale = 0.7
                        ),
               widget.TextBox(
@@ -332,7 +332,7 @@ def init_widgets_list():
                widget.Memory(
                 format='󰻠{MemUsed: .0f}{mm}/{MemTotal: .0f}{mm}',
                 measure_mem='G',
-                foreground=colors['fg1'],
+                foreground=colors['fg2'],
                 background=colors['bg3']
                ),
               widget.TextBox(
@@ -342,26 +342,26 @@ def init_widgets_list():
                        ),
                widget.CPU(
 					format=" {load_percent:04}%",
-					foreground=colors['fg1'],
+            foreground=colors['magenta'],
 			   ),
               widget.TextBox(
                        text = '', font = "JetBrainsMono Nerd Font", fontsize = 37,
-                       foreground = colors['fg1'], background = colors['bg'],
+                       foreground = colors['fg'], background = colors['bg'],
                        padding = 0
                        ),
                widget.Volume(
 					fmt="󰕾 {}",
 					mute_command="amixer -D pulse set Master toggle",
 					foreground=colors['bg'],
-                    background=colors['fg1']
+                    background=colors['fg']
             ),
               widget.TextBox(
                        text = '', font = "JetBrainsMono Nerd Font", fontsize = 37,
-                       foreground = colors['bg'], background = colors['fg1'],
+                       foreground = colors['bg'], background = colors['fg'],
                        padding = 0
                        ),
               widget.Clock(
-                       foreground = colors['fg1'], background = colors['bg'],
+                       foreground = colors['fg3'], background = colors['bg'],
             format = "%d-%m %a %H:%M",
                        padding = 5
                        ),
@@ -395,7 +395,7 @@ def init_widgets_screen1():
 
 #=-/ Set bar height and opacity, also set wallpaper /-=#
 def init_screens():
-    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), opacity=1.0, size=25),
+    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), opacity=1.0, size=25, margin=3),
             wallpaper='~/.config/qtile/leafs.jpg',
             wallpaper_mode='fill')]
 

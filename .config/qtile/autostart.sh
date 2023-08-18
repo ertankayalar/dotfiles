@@ -8,7 +8,7 @@ nm-applet &
 # feh --bg-scale ~/.config/backgrounds/Wallpaperkiss_1208315.jpg &
 
 # compositor
-#picom --config ~/.config/picom/picom.conf &
+picom --config ~/.config/picom/picom.conf &
 
 # sxhkd
 sxhkd -c ~/.config/qtile/sxhkd/sxhkdrc &
@@ -17,6 +17,4 @@ sxhkd -c ~/.config/qtile/sxhkd/sxhkdrc &
 dunst &
 
 telegram-desktop &
-
-yandex-disk start & 
 
