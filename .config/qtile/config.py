@@ -346,18 +346,18 @@ def init_widgets_list():
 			   ),
               widget.TextBox(
                        text = '', font = "JetBrainsMono Nerd Font", fontsize = 37,
-                       foreground = colors['fg'], background = colors['bg'],
+                       foreground = colors['fg1'], background = colors['bg'],
                        padding = 0
                        ),
                widget.Volume(
 					fmt="󰕾 {}",
 					mute_command="amixer -D pulse set Master toggle",
 					foreground=colors['bg'],
-                    background=colors['fg']
+                    background=colors['fg1']
             ),
               widget.TextBox(
                        text = '', font = "JetBrainsMono Nerd Font", fontsize = 37,
-                       foreground = colors['bg'], background = colors['fg'],
+                       foreground = colors['bg'], background = colors['fg1'],
                        padding = 0
                        ),
               widget.Clock(
