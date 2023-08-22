@@ -16,7 +16,10 @@ M.treesitter = {
     "markdown",
     "markdown_inline",
     "astro",
-    "go"
+    "go",
+    "gomod",
+    "toml",
+    "vue"
   },
   indent = {
     enable = true,
