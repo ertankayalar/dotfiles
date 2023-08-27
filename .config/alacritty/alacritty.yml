@@ -5,7 +5,6 @@ font:
   glyph_offset:
     y: 2
   normal:
-    # family: "Mononoki Nerd Font"
     family: "JetBrainsMono Nerd Font"
 window:
   padding:
@@ -14,7 +13,7 @@ window:
   dimensions:
     columns: 120
     lines: 40
-  opacity: 0.83
+  opacity: 0.93
   decorations: full
 
 cursor:
@@ -30,8 +29,11 @@ scrolling:
   auto_scroll: true
 import:
   # uncomment the flavour you want below:
+  - ~/.config/alacritty/themes/rose-pine.yml
+  # - ~/.config/alacritty/themes/rose-pine-moon.yml
+  # - ~/.config/alacritty/themes/rose-pine-dawn.yml
   # - ~/.config/alacritty/themes/gruvbox_dark.yml
-  - ~/.config/alacritty/themes/gruvbox_material_medium_dark.yml
+  # - ~/.config/alacritty/themes/gruvbox_material_medium_dark.yml
   # - ~/.dotfiles/alacritty/oxocarbon-dark.yml
   # - ~/.dotfiles/alacritty/themes/poimandres-storm.yml
  # - ~/.dotfiles/alacritty/catppuccin-mocha.yml
