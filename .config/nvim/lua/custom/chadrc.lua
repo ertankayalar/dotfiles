@@ -4,9 +4,13 @@ local M = {}
 -- Path to overriding theme and highlights files
 local highlights = require "custom.highlights"
 
+M.opt = {
+  shiftwidth = 2,
+}
+
 M.ui = {
   theme = "rosepine",
-  theme_toggle = { "rosepine", "catppuccin" },
+  theme_toggle = { "rosepine", "rosepine" },
 
   hl_override = highlights.override,
   hl_add = highlights.add,
