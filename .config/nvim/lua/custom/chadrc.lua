@@ -10,7 +10,7 @@ M.opt = {
 
 M.ui = {
   theme = "rosepine",
-  theme_toggle = { "rosepine", "rosepine" },
+  -- theme_toggle = { "rosepine", "rosepine" },
 
   hl_override = highlights.override,
   hl_add = highlights.add,
