@@ -132,7 +132,8 @@ alias gc='git commit'
 alias gcm='git commit -m'
 alias gp='git push'
 alias gpo="git push origin main"
-
+alias gpb="git push backup main"
+alias gpob="gpo && gpb"
 #tmux          
 alias tmuxc="tmux new-session -s"
 alias tmuxa="tmux attach-session -t"
