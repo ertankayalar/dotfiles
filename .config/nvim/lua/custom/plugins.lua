@@ -25,7 +25,14 @@ local plugins = {
     },
   },
   { "phelipetls/vim-hugo", lazy = false },
-  { "fatih/vim-go", lazy = false },
+  { "fatih/vim-go" },
+  {
+    "mfussenegger/nvim-lint",
+    event = "VeryLazy",
+    config = function()
+      require "custom.configs.lint"
+    end
+  },
   {
     "neovim/nvim-lspconfig",
     dependencies = {
@@ -42,11 +49,36 @@ local plugins = {
       require "custom.configs.lspconfig"
     end, -- Override to setup mason-lspconfig
   },
-
+  {
+    "mhartington/formatter.nvim",
+    event = "VeryLazy",
+    opts = function()
+      return require "custom.configs.formatter"
+    end
+  },
   -- override plugin configs
   {
     "williamboman/mason.nvim",
-    opts = overrides.mason,
+    opts = {
+      ensure_installed = {
+        "eslint-lsp",
+        "css-lsp",
+        "html-lsp",
+        "json-lsp",
+        "python-lsp-server",
+        "js-debug-adapter",
+        "prettier",
+        "tailwindcss-language-server",
+        "typescript-language-server",
+        "pylint", -- python linter
+        "pyink", -- python formatter
+        -- "black",
+        "mypy", -- python type checker
+        "ruff", -- rust formatter
+        "pyright"
+      }
+    }
+    -- opts = overrides.mason,
   },
 
   {
