@@ -1,7 +1,7 @@
-# If not running interactively, don't do anything 
-[[ $- != *i* ]] && return 
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
 
-stty -ixon # Disables ctrl-s and ctrl-q (Used To Pause Term) 
+stty -ixon # Disables ctrl-s and ctrl-q (Used To Pause Term)
 
 
 # don't put duplicate lines or lines starting with space in the history.
@@ -49,7 +49,7 @@ fi
 unset color_prompt force_color_prompt
 
 
-#paths 
+#paths
 alias cdm="cd /run/media/ertan/"
 alias pr='cd $HOME/Projects/'
 alias wi="cd $HOME/Wiki"
@@ -69,7 +69,7 @@ alias nv='nvim'
 alias lv='lvim'
 alias vim="nvim"
 
-# exa 
+# exa
 alias exa='exa --color auto'
 alias ls='exa -G --icons'
 alias l='ls'
@@ -122,7 +122,7 @@ alias more=less
 alias bs='micro ~/.bashrc'
 alias reload='source ~/.bashrc'
 
-#git                              
+#git
 alias gc="git clone"
 alias gits="git status"
 alias gst='git status'
@@ -134,11 +134,11 @@ alias gp='git push'
 alias gpo="git push origin main"
 alias gpb="git push backup main"
 alias gpob="gpo && gpb"
-#tmux          
+#tmux
 alias tmuxc="tmux new-session -s"
 alias tmuxa="tmux attach-session -t"
 alias tmuxk="tmux kill-session -t"
-alias tmuxka="tmux kill-server" 
+alias tmuxka="tmux kill-server"
 
 
 # caps:escape
@@ -223,14 +223,15 @@ export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 
 # rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+# export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -bash)"
+# export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 
 # PS1 Customization
-PS1="\[\e[32m\]\h\[\e[m\]\[\e[36m\]@\[\e[m\]\[\e[34m\]\u\[\e[m\] \W \$ " 
+PS1="\[\e[32m\]\h\[\e[m\]\[\e[36m\]@\[\e[m\]\[\e[34m\]\u\[\e[m\] \W \$ "
 neofetch
-# GO 
+# GO
 export PATH="/usr/local/go/bin:$PATH"
-# Hugo Cache Dir 
+# Hugo Cache Dir
 HUGO_CACHEDIR="$HOME/.hugo/tmp"
+# eval "$(~/.rbenv/bin/rbenv init - bash)"
