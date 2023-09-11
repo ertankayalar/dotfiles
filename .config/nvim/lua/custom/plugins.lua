@@ -2,17 +2,17 @@ local overrides = require "custom.configs.overrides"
 
 ---@type NvPluginSpec[]
 local plugins = {
-{
+  {
     "github/copilot.vim",
     lazy = false,
     config = function()
       -- Mapping tab is already used by NvChad
-      vim.g.copilot_no_tab_map = true;
-      vim.g.copilot_assume_mapped = true;
-      vim.g.copilot_tab_fallback = "";
+      vim.g.copilot_no_tab_map = true
+      vim.g.copilot_assume_mapped = true
+      -- vim.g.copilot_tab_fallback = "";
       -- The mapping is set to other key, see custom/lua/mappings
       -- or run <leader>ch to see copilot mapping section
-    end
+    end,
   },
   -- Override plugin definition options
   {
@@ -31,7 +31,7 @@ local plugins = {
     event = "VeryLazy",
     config = function()
       require "custom.configs.lint"
-    end
+    end,
   },
   {
     "neovim/nvim-lspconfig",
@@ -54,7 +54,7 @@ local plugins = {
     event = "VeryLazy",
     opts = function()
       return require "custom.configs.formatter"
-    end
+    end,
   },
   -- override plugin configs
   {
@@ -75,9 +75,9 @@ local plugins = {
         -- "black",
         "mypy", -- python type checker
         "ruff", -- rust formatter
-        "pyright"
-      }
-    }
+        "pyright",
+      },
+    },
     -- opts = overrides.mason,
   },
 
