@@ -163,6 +163,14 @@ alias ncumajor='npx npm-check-updates -u -f node-fetch'
 
 alias pnpmup='pnpm add -g @pnpm/exe'
 
+# Python
+alias py='python3'
+alias pyenv='source venv/bin/activate'
+alias pyenvd='deactivate'
+alias pyenvc='python3 -m venv venv'
+alias pipreq='pip freeze > requirements.txt'
+alias pipup='pip install --upgrade pip'
+
 # Rails
 alias br='bin/rails'
 alias brc='bin/rails console'
@@ -224,7 +232,7 @@ export PATH="$PNPM_HOME:$PATH"
 
 # rbenv
 # export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -bash)"
+# eval "$(rbenv init -bash)"
 # export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 
 # PS1 Customization
