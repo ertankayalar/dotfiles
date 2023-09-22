@@ -11,8 +11,8 @@ window:
     x: 5
     y: 5
   dimensions:
-    columns: 120
-    lines: 40
+    columns: 180
+    lines: 30
   opacity: 0.93
   decorations: full
 
@@ -29,12 +29,13 @@ scrolling:
   auto_scroll: true
 import:
   # uncomment the flavour you want below:
-  - ~/.config/alacritty/themes/rose-pine.yml
+  # - ~/.config/alacritty/themes/darcula.yml
+  # - ~/.config/alacritty/themes/rose-pine.yml
   # - ~/.config/alacritty/themes/rose-pine-moon.yml
   # - ~/.config/alacritty/themes/rose-pine-dawn.yml
   # - ~/.config/alacritty/themes/gruvbox_dark.yml
   # - ~/.config/alacritty/themes/gruvbox_material_medium_dark.yml
-  # - ~/.dotfiles/alacritty/oxocarbon-dark.yml
+   - ~/.dotfiles/alacritty/oxocarbon-dark.yml
   # - ~/.dotfiles/alacritty/themes/poimandres-storm.yml
  # - ~/.dotfiles/alacritty/catppuccin-mocha.yml
  # - ~/.dotfiles/alacritty/catppuccin-macchiato.yml
