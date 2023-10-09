@@ -39,5 +39,6 @@
         "/home/ertan/.local/share/nvim/lazy/nightfox.nvim/lua",
         "/home/ertan/.dotfiles/nvim/lua",
         "/home/ertan/.local/share/nvim/mason/packages/lua-language-server/libexec/meta/063d5d79"
-    ]
+    ],
+    "workspace.checkThirdParty": false
 } 
